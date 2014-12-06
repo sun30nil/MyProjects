@@ -1,0 +1,159 @@
+<?php
+//include "DBConnection.php";
+include "function_only.inc.php";
+$event_id = $_GET['event_id'];
+$event_type = $_GET['v_type'];
+
+$obj=new Database();
+$con=$obj->openConnection();
+$myAssocVend = $myAssocVendors;
+echo count($myAssocVend)."count";
+$myAssocVendorsNew = array();
+$result = mysqli_query($con,"select * from savedevents where event_id=$event_id");
+$all_events = mysqli_fetch_array($result);
+
+$vendors = $all_events['vendor_list'];
+$all_vendors = explode(',', $vendors);
+
+ for ($i=0; $i<count($all_vendors)-1; $i++)
+			   	{
+			   	if ($all_vendors[$i]!="" && preg_match('/FN/',$all_vendors[$i]) == 1 && preg_match('/'.$event_type.'/',$all_vendors[$i]) == 1) //regex to find the type  of vendor
+					  	{
+					  		$result1 = mysqli_query($con,"SELECT * FROM comments where `vendor_id`='".$all_vendors[$i]."'");
+					  	while($each_vendor = mysqli_fetch_array($result1))
+					  		{
+					  			array_push($myAssocVendorsNew,$each_vendor);
+					  		}
+					  	}
+			   	if ($all_vendors[$i]!="" && preg_match('/CAT/',$all_vendors[$i]) == 1 && preg_match('/'.$event_type.'/',$all_vendors[$i]) == 1) //regex to find the type  of vendor
+					  	{
+					  		$result1 = mysqli_query($con,"SELECT * FROM comments where `vendor_id`='".$all_vendors[$i]."'");
+					  	while($each_vendor = mysqli_fetch_array($result1))
+					  		{
+					  			array_push($myAssocVendorsNew,$each_vendor);
+					  		}
+					  	}
+			   	if ($all_vendors[$i]!="" && preg_match('/DEC/',$all_vendors[$i]) == 1 && preg_match('/'.$event_type.'/',$all_vendors[$i]) == 1) //regex to find the type  of vendor
+					  	{
+					  		$result1 = mysqli_query($con,"SELECT * FROM comments where `vendor_id`='".$all_vendors[$i]."'");
+					  	while($each_vendor = mysqli_fetch_array($result1))
+					  		{
+					  			array_push($myAssocVendorsNew,$each_vendor);
+					  		}
+					  	}
+			   	if ($all_vendors[$i]!="" && preg_match('/PH/',$all_vendors[$i]) == 1 && preg_match('/'.$event_type.'/',$all_vendors[$i]) == 1) //regex to find the type  of vendor
+					  	{
+					  		$result1 = mysqli_query($con,"SELECT * FROM comments where `vendor_id`='".$all_vendors[$i]."'");
+					  	while($each_vendor = mysqli_fetch_array($result1))
+					  		{
+					  			array_push($myAssocVendorsNew,$each_vendor);
+					  		}
+					  	}
+			   	}
+$targetVendors = array();
+			   	for ($i=0; $i<count($all_vendors)-1; $i++)
+			   	{
+			   		$count_rating=0;
+			   		$add_rating=0;
+			   	foreach($myAssocVendorsNew as $y=>$y_value) {
+			   		if($all_vendors[$i]==$y_value['vendor_id'])
+			   		{
+			   			$add_rating+= $y_value['rating'];
+			   			$count_rating++;
+			   		}
+			   		if($count_rating!=0){
+			   		$targetVendors[$all_vendors[$i]]=($add_rating*10)/$count_rating;
+			   		}
+			   	//	else $targetVendors[$all_vendors[$i]]=0;
+			   	}
+			   	}
+ $rows = array();  //forming a JSON table
+  $table = array();
+  $table['cols'] = array(
+    array('label' => 'Vendor_Name', 'type' => 'string'),
+    array('label' => 'Rating', 'type' => 'number')
+);			   	
+foreach($targetVendors as $y=>$y_value) {
+	  $temp = array();
+	  $vname_array = $myAssocVend[$y];
+	//  echo $vname_array['fn_name'].";;;;".$y;
+	  if(preg_match('/FN/',$y)==1)
+	  {
+	  	$temp[] = array('v' => (String) $vname_array['fn_name']);
+	  }
+      else if(preg_match('/CAT/',$y)==1)
+	  {
+	  	$temp[] = array('v' => (String) $vname_array['cat_name']);
+	  }
+else if(preg_match('/DEC/',$y)==1)
+	  {
+	  	$temp[] = array('v' => (String) $vname_array['dec_name']);
+	  }
+else if(preg_match('/PH/',$y)==1)
+	  {
+	  	$temp[] = array('v' => (String) $vname_array['ph_name']);
+	  }
+      $temp[] = array('v' => (float) $y_value); 
+      $rows[] = array('c' => $temp);
+  }
+  $table['rows'] = $rows;
+$jsonTable1 = json_encode($table);	   	
+
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by Haritha and Prashanth
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Name       : Our Dream Website
+Description: A three-column, fixed-width design with dark color scheme.
+Version    : 0.1
+Released   : 2014/06/07
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Summary Report</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+<script src = "Js/jquery.js"></script>
+<script src = "Js/Slide.js"></script>
+<script src="jquery.min.js"></script>
+<!--Load the AJAX API-->
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="//www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1', {packages: ['table']});
+    </script>   
+<script type="text/javascript">
+// Load the Visualization API and the piechart package.
+google.load('visualization', '1.0', {'packages':['corechart']});
+google.setOnLoadCallback(drawChart);
+function drawChart() {
+
+	var json1 = '<?php echo $jsonTable1;?>'; 
+	alert(json1); 
+  var data = new google.visualization.DataTable(json1);
+   // Set chart options
+  var options = {'title':'Investment Division of Budget',
+                 'width':700,
+                 'height':500};
+  // Instantiate and draw our chart, passing in some options.
+  var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+  chart.draw(data, options);
+}
+
+</script>	
+</head>
+
+<body>
+
+<div id='chart_div'></div>
+   
+</body>
+</html>

@@ -1,0 +1,181 @@
+<?php
+include "function_only.inc.php"
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by Haritha and Prashanth
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Name       : Our Dream Website
+Description: A three-column, fixed-width design with dark color scheme.
+Version    : 0.1
+Released   : 2014/06/07
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><?php 
+	echo $_SESSION['name'];
+?>  </title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+<script src = "Js/jquery.js"></script>
+<script src = "Js/Slide.js"></script>
+<script src="jquery.min.js"></script>
+<script>
+function pop_up(url){
+	window.open(url,'win2','status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=500,height=500,directories=no,location=no,top=100,left=100') 
+}
+function findVendorDetails(v1)
+{
+	var vend = document.getElementById(v1).value;
+	window.open("getVendorDetails.php?vend_id="+vend,'win2','status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=500,height=500,directories=no,location=no,top=100,left=100') 
+	
+}
+function removeVendor(v1)
+{
+	var vend = document.getElementById(v1).value;
+	window.open("removeVendor.php?vend_id="+vend,'win2','status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=500,height=500,directories=no,location=no,top=100,left=100') 
+	location.reload();
+}
+function postComment(v1,v2)
+{
+	var vend = document.getElementById(v1).value;
+	window.open("PostComment.php?vend_id="+vend+"&v_name="+v2,'win2','status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=500,height=500,directories=no,location=no,top=100,left=100') 
+	location.reload();
+}
+</script>	
+<link rel="stylesheet" href="css1/style.css" type="text/css" media="screen, projection, tv" />
+<link rel="stylesheet" href="css1/style-print.css" type="text/css" media="print" />
+</head>
+<body>
+
+<div id="logo" class="container">
+<table cellspacing="0" class="container">
+<tr>
+<td><h1><a href="../Homepage.php">Dream<span>EventZ</span></a></h1>   
+		<p>Your Event Our Plan</p>
+		</td>
+</tr>
+</table> 	
+</div>
+
+<div id="wrapper">
+  <div class="title">
+    <div class="title-top">
+      <div class="title-left">
+        <div class="title-right">
+          <div class="title-bottom">
+            <div class="title-top-left">
+              <div class="title-bottom-left">
+                <div class="title-top-right">
+                  <div class="title-bottom-right">
+                    <h1>Welcome <span><?php echo $_SESSION['name'];?></span></h1>
+                    <p>Your profile..&hellip; </p>
+                    
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr class="noscreen" />
+  <div class="content">
+    <div class="column-left">
+      <h3>MENU</h3>
+      <a href="#skip-menu" class="hidden">Skip menu</a>
+      <ul class="menu">
+        <li><a href="userHome.php" class="active">Home</a></li>
+         <li><a href="ShowVenues.php">Plan a wedding</a></li> 
+        <li><a href="#" onclick="pop_up('addfamily.php')">Add family member</a></li>  
+        <li><a href="showSavedEvents.php" >Show My Events</a></li>      
+        <li class="last"><a href="#">Contact Dream events</a></li>
+      </ul>
+    </div>
+    <div id="skip-menu"></div>
+    <div class="column-right">
+      <div class="box">
+        <div class="box-top"></div>
+        <div class="box-in" id="box-in">
+        <table style="color:black;">
+         <?php 
+         $counter = 1;
+     foreach($myAssocEvent as $x=>$x_value) {
+	   	echo "<tr><td bgcolor='cyan' style='width:125px'>Event #".$counter."</td><td style='width:175px'></td> <td style='width:70px'></td></tr>";
+	   	echo "<tr><td>Place</td><td>".$x_value['location']."</td></tr>";
+	   	echo "<tr><td>Budget</td><td>".$x_value['budget']."</td></tr>";
+	   	echo "<tr><td>Capacity</td><td>".$x_value['capacity']."</td></tr>";
+	   	echo "<tr><td>Event Date</td><td>".$x_value['event_date']."</td></tr>";
+	   	echo "<tr><td>Last Saved</td><td>".$x_value['timesaved']."</td></tr>";
+//  echo "EventID=" . $x . ", Budget=" . $x_value['budget']. ", Capacity=" . $x_value['capacity']. ", Event Date=" . $x_value['event_date']. ", Last Saved on=" . $x_value['timesaved'];
+  foreach($myAssocVendors as $y=>$y_value) {
+  	if(preg_match('/'.$y.'/',$x_value['vendor_list']) == 1 && preg_match('/FN/',$y) == 1)
+  	{
+  		$id1=$x.",".$y_value['fn_id'];
+  		$id2=$x.",".$y_value['fn_id'].",comment"; //button id for commenting
+  		$vname=$y_value['fn_name'];
+  		echo "<tr><td>Function hall</td>
+  	<td> <button id='".$y_value['fn_id']."' onclick='findVendorDetails(this.id);' value='".$y_value['fn_id']."'>".$y_value['fn_name']."</button></td>
+  	<td> <button id='".$id1."' onclick='removeVendor(this.id);' value='".$id1."'>Remove</button></td>
+  	<td> <button id='".$id2."' onclick='postComment(this.id,this.name);' name='".$vname."' value='".$id1."'>Post Comment</button></td></tr>";
+  	}
+  	else if(preg_match('/'.$y.'/',$x_value['vendor_list']) == 1 && preg_match('/CAT/',$y) == 1)
+  	{
+  		$id1=$x.",".$y_value['cat_id'];
+  		$id2=$x.",".$y_value['cat_id'].",comment"; //button id for commenting
+  		$vname=$y_value['cat_name'];
+  		echo "<tr><td>Caterer</td>
+  		<td><button id='".$y_value['cat_id']."' onclick='findVendorDetails(this.id);' value='".$y_value['cat_id']."'>".$y_value['cat_name']."</button></td>
+  		<td> <button id='".$id1."' onclick='removeVendor(this.id);' value='".$id1."'>Remove</button></td>
+  		<td> <button id='".$id2."' onclick='postComment(this.id,this.name);' name='".$vname."' value='".$id1."'>Post Comment</button></td></tr>";
+  	}
+  	else if(preg_match('/'.$y.'/',$x_value['vendor_list']) == 1 && preg_match('/DEC/',$y) == 1)
+  	{
+  		$id1=$x.",".$y_value['dec_id'];
+  		$id2=$x.",".$y_value['dec_id'].",comment"; //button id for commenting
+  		$vname=$y_value['dec_name'];
+  		echo "<tr><td>Decorator</td>
+  		<td ><button id='".$y_value['dec_id']."' onclick='findVendorDetails(this.id);' value='".$y_value['dec_id']."'>".$y_value['dec_name']."</button></td>
+  		<td> <button id='".$id1."' onclick='removeVendor(this.id);' value='".$id1."'>Remove</button></td>
+  		<td> <button id='".$id2."' onclick='postComment(this.id,this.name);' name='".$vname."' value='".$id1."'>Post Comment</button></td></tr>";
+  	}
+  	else if(preg_match('/'.$y.'/',$x_value['vendor_list']) == 1 && preg_match('/PH/',$y) == 1)
+  	{
+  		$id1=$x.",".$y_value['ph_id'];
+  		$id2=$x.",".$y_value['ph_id'].",comment"; //button id for commenting
+  		$vname=$y_value['ph_name'];
+  		echo "<tr><td>Photographer</td>
+  		<td id='".$y_value['ph_name']."'><button id='".$y_value['ph_id']."' onclick='findVendorDetails(this.id);' value='".$y_value['ph_id']."'>".$y_value['ph_name']."</button></td>
+  		<td> <button id='".$id1."' onclick='removeVendor(this.id);' value='".$id1."'>Remove</button></td>
+  		<td> <button id='".$id2."' onclick='postComment(this.id,this.name);' name='".$vname."' value='".$id1."'>Post Comment</button></td></tr>";
+  	}
+  }
+  $counter++;
+  echo "<tr><td style='height:40px'> </td><td> </td></tr> <tr><td> </td><td> </td></tr>";
+}
+  ?>
+        </table>
+ 
+        </div>
+      </div>
+    
+    </div>
+  </div>
+</div>
+<div style="position : variable;bottom : 0;height : 40px;margin-top : 40px;" id="copyright" class="container">
+	<p>Follow Us On <img src="../images/facebook.png" height="25" width="25"></img></p>
+</div>
+</body>
+</html>
+
+
+

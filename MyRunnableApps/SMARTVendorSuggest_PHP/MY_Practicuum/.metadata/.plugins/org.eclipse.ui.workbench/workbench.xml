@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbench progressCount="55" version="2.0">
+<workbenchAdvisor/>
+<window height="728" maximized="true" width="1024" x="52" y="0">
+<fastViewData fastViewLocation="1024"/>
+<perspectiveBar>
+<itemSize x="160"/>
+</perspectiveBar>
+<coolbarLayout locked="0">
+<coolItem id="group.file" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="122" y="22"/>
+<coolItem id="additions" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="129" y="22"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="99" y="22"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="38" y="22"/>
+<coolItem id="org.eclipse.wst.server.ui.internal.webbrowser.actionSet" itemType="typeToolBarContribution" x="38" y="22"/>
+<coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="group.nav" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
+<coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.wst.css.core.csssource.source" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.php.editor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.ui.browser.editor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="group.help" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
+</coolbarLayout>
+<page aggregateWorkingSetId="Aggregate for window 1396997187988" focus="true" label="Workspace - PHP">
+<editors>
+<editorArea activeWorkbook="DefaultEditorWorkbook">
+<info part="DefaultEditorWorkbook">
+<folder appearance="1" expanded="2">
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
+<part id="7"/>
+<part id="8"/>
+<part id="9"/>
+</presentation>
+</folder>
+</info>
+</editorArea>
+<editor id="org.eclipse.php.editor" name="Homepage.php" partName="Homepage.php" path="C:/xampp/htdocs/MY_Practicuum/Event_Management/Homepage.php" title="Homepage.php" tooltip="Event_Management/Homepage.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Event_Management/Homepage.php"/>
+<editorState selectionHorizontalPixel="1736" selectionLength="673" selectionOffset="12858" selectionTopPixel="5836"/>
+</editor>
+<editor id="org.eclipse.php.editor" name="ShowVenues.php" partName="ShowVenues.php" path="C:/xampp/htdocs/MY_Practicuum/Event_Management/ShowVenues.php" title="ShowVenues.php" tooltip="Event_Management/ShowVenues.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Event_Management/ShowVenues.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4558" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.php.editor" name="RegisterVendor.php" partName="RegisterVendor.php" path="C:/xampp/htdocs/MY_Practicuum/Event_Management/RegisterVendor.php" title="RegisterVendor.php" tooltip="Event_Management/RegisterVendor.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Event_Management/RegisterVendor.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="637" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.php.editor" name="findVendors.php" partName="findVendors.php" path="C:/xampp/htdocs/MY_Practicuum/Event_Management/findVendors.php" title="findVendors.php" tooltip="Event_Management/findVendors.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Event_Management/findVendors.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="386" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.php.editor" name="verifyCustomer.php" partName="verifyCustomer.php" path="C:/xampp/htdocs/MY_Practicuum/Event_Management/Logins/verifyCustomer.php" title="verifyCustomer.php" tooltip="Event_Management/Logins/verifyCustomer.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Event_Management/Logins/verifyCustomer.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="441"/>
+</editor>
+<editor id="org.eclipse.php.editor" name="customerLogin.php" partName="customerLogin.php" path="C:/xampp/htdocs/MY_Practicuum/Event_Management/Logins/customerLogin.php" title="customerLogin.php" tooltip="Event_Management/Logins/customerLogin.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Event_Management/Logins/customerLogin.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2655" selectionTopPixel="1229"/>
+</editor>
+<editor id="org.eclipse.php.editor" name="SummarizeVendors.php" partName="SummarizeVendors.php" path="C:/xampp/htdocs/MY_Practicuum/Event_Management/Logins/SummarizeVendors.php" title="SummarizeVendors.php" tooltip="Event_Management/Logins/SummarizeVendors.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Event_Management/Logins/SummarizeVendors.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3385" selectionTopPixel="4767"/>
+</editor>
+<editor id="org.eclipse.php.editor" name="userHome.php" partName="userHome.php" path="C:/xampp/htdocs/MY_Practicuum/Event_Management/Logins/userHome.php" title="userHome.php" tooltip="Event_Management/Logins/userHome.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Event_Management/Logins/userHome.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="3" selectionOffset="4605" selectionTopPixel="1021"/>
+</editor>
+<editor id="org.eclipse.php.editor" name="DaysToEvent.php" partName="DaysToEvent.php" path="C:/xampp/htdocs/MY_Practicuum/Event_Management/Logins/DaysToEvent.php" title="DaysToEvent.php" tooltip="Event_Management/Logins/DaysToEvent.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Event_Management/Logins/DaysToEvent.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="887" selectionTopPixel="141"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.php.editor" name="ContactUS.php" partName="ContactUS.php" path="C:/xampp/htdocs/MY_Practicuum/Event_Management/Logins/ContactUS.php" title="ContactUS.php" tooltip="Event_Management/Logins/ContactUS.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Event_Management/Logins/ContactUS.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4917" selectionTopPixel="2142"/>
+</editor>
+</editors>
+<views>
+<view id="org.eclipse.dltk.ui.TypeHierarchy" partName="Type Hierarchy"/>
+<view id="org.eclipse.ui.views.ProblemView" partName="Problems">
+<viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<expanded>
+<category IMemento.internal.id="Warnings (100 of 516 items)"/>
+</expanded>
+<columnWidths org.eclipse.ui.ide.locationField="64" org.eclipse.ui.ide.markerType="94" org.eclipse.ui.ide.pathField="124" org.eclipse.ui.ide.resourceField="94" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
+</viewState>
+</view>
+<view id="org.eclipse.php.ui.explorer" partName="PHP Explorer">
+<viewState group_libraries="1" isWindowWorkingSet="false" layout="1" linkWithEditor="0" rootMode="1" workingSetName="">
+<customFilters userDefinedPatternsEnabled="false">
+<xmlDefinedFilters>
+<child filterId="org.eclipse.php.ui.explorer.EmptyInnerPackageFilter" isEnabled="false"/>
+<child filterId="org.eclipse.php.ui.explorer.PHPHTMLFilter" isEnabled="false"/>
+<child filterId="org.eclipse.php.ui.explorer.NonScriptElementFilter" isEnabled="false"/>
+<child filterId="org.eclipse.php.ui.explorer.NonPublicFilter" isEnabled="false"/>
+<child filterId="org.eclipse.php.ui.explorer.NonScriptProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.php.ui.explorer.RSEProjectFilter" isEnabled="true"/>
+<child filterId="org.eclipse.php.ui.explorer.FieldsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.php.ui.explorer.EmptyPackageFilter" isEnabled="false"/>
+<child filterId="org.eclipse.php.ui.explorer.UseStatementFilter" isEnabled="true"/>
+<child filterId="org.eclipse.php.ui.explorer.ContainMembersFilter" isEnabled="false"/>
+<child filterId="org.eclipse.php.ui.explorer.LibraryFilter" isEnabled="false"/>
+<child filterId="org.eclipse.php.ui.explorer.SMFileFilter" isEnabled="false"/>
+<child filterId="org.eclipse.php.ui.explorer.NonSharedProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.php.ui.explorer.DotFilesFilter" isEnabled="true"/>
+<child filterId="org.eclipse.php.ui.explorer.ContainedLibraryFilter" isEnabled="false"/>
+<child filterId="org.eclipse.php.ui.explorer.ClosedProjectsFilter" isEnabled="false"/>
+</xmlDefinedFilters>
+</customFilters>
+</viewState>
+</view>
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console"/>
+<view id="org.eclipse.mylyn.tasks.ui.views.tasks" partName="Task List"/>
+<view id="org.eclipse.ui.views.TaskList" partName="Tasks"/>
+<view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
+<viewState/>
+</view>
+</views>
+<perspectives activePart="org.eclipse.php.editor" activePerspective="org.eclipse.php.perspective">
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="org.eclipse.php.internal.ui.PHPPerspectiveFactory" id="org.eclipse.php.perspective" label="PHP"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.doc.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.tasks.ui.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.rse.core.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<alwaysOnActionSet id="org.eclipse.php.ui.PHPActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
+<alwaysOnActionSet id="org.eclipse.wst.server.ui.internal.webbrowser.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.php.ui.text.php.actionSet.presentation"/>
+<show_view_action id="org.eclipse.php.ui.explorer"/>
+<show_view_action id="org.eclipse.dltk.ui.TypeHierarchy"/>
+<show_view_action id="org.eclipse.php.ui.functions"/>
+<show_view_action id="org.eclipse.php.ui.projectOutline"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<show_view_action id="org.eclipse.mylyn.tasks.ui.views.tasks"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="org.eclipse.ui.views.ResourceNavigator"/>
+<new_wizard_action id="org.eclipse.mylyn.tasks.ui.wizards.new.repository.task"/>
+<new_wizard_action id="org.eclipse.php.ui.wizards.PHPProjectCreationWizard"/>
+<new_wizard_action id="org.eclipse.php.ui.wizards.PHPFileCreationWizard"/>
+<new_wizard_action id="org.eclipse.php.ui.wizards.UntitledPHPDocumentWizard"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.folder"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.file"/>
+<new_wizard_action id="org.eclipse.wst.css.ui.internal.wizard.NewCSSWizard"/>
+<new_wizard_action id="org.eclipse.wst.html.ui.internal.wizard.NewHTMLWizard"/>
+<new_wizard_action id="org.eclipse.wst.xml.ui.internal.wizards.NewXMLWizard"/>
+<new_wizard_action id="org.eclipse.ui.editors.wizards.UntitledTextFileWizard"/>
+<perspective_action id="org.eclipse.php.perspective"/>
+<perspective_action id="org.eclipse.php.debug.ui.PHPDebugPerspective"/>
+<hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="org.eclipse.php.ui.explorer"/>
+<view id="org.eclipse.dltk.ui.TypeHierarchy"/>
+<view id="org.eclipse.ui.views.ProblemView"/>
+<view id="org.eclipse.ui.views.TaskList"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<view id="org.eclipse.mylyn.tasks.ui.views.tasks"/>
+<fastViewBars/>
+<layout>
+<mainWindow>
+<info folder="true" part="topLeft">
+<folder activePageID="org.eclipse.php.ui.explorer" appearance="2" expanded="2">
+<page content="org.eclipse.php.ui.explorer" label="PHP Explorer"/>
+<page content="org.eclipse.dltk.ui.TypeHierarchy" label="Type Hierarchy"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="750" ratioRight="250" relationship="2" relative="topLeft">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.15202369" ratioLeft="154" ratioRight="859" relationship="2" relative="topLeft"/>
+<info folder="true" part="bottom" ratio="0.75282717" ratioLeft="466" ratioRight="153" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.views.ProblemView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
+<page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="org.eclipse.debug.ui.PHPDebugOutput" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="right" ratio="0.87616825" ratioLeft="750" ratioRight="106" relationship="2" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<page content="org.eclipse.mylyn.tasks.ui.views.tasks" label="Task List"/>
+<page content="org.eclipse.php.ui.projectOutline" label="LabelNotFound"/>
+<page content="org.eclipse.php.ui.functions" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+</perspectives>
+<workingSets/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/Event_Management/Logins/SummaryReport.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/Event_Management/ContactUs.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/Event_Management/Logins/userHome.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/Event_Management/Logins/ShowVenues.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/Event_Management/Logins/SummarizeVendors.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/Event_Management/Logins/ContactUS.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/Event_Management/ContactUs.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/Event_Management/Logins/ShowVenues.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/Event_Management/Homepage.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/Event_Management/Logins/customerLogin.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/Event_Management/ShowVenues.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/Event_Management/RegisterVendor.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/Event_Management/findVendors.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/Event_Management/Homepage.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/Event_Management/Logins/verifyCustomer.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/Event_Management/Logins/customerLogin.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/Event_Management/Logins/SummarizeVendors.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/Event_Management/ShowVenues.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/Event_Management/Logins/userHome.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/Event_Management/Logins/DaysToEvent.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/Event_Management/Logins/verifyCustomer.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/Event_Management/Logins/ContactUS.php"/>
+</editors>
+<item historyLabel="ShowVenues.php" index="3">
+<position info="not_deleted" x="5691" y="0"/>
+</item>
+<item historyLabel="ContactUs.php" index="1">
+<position info="not_deleted" x="2976" y="72"/>
+</item>
+<item historyLabel="SummarizeVendors.php" index="4">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="SummaryReport.php" index="0">
+<position info="not_deleted" x="5152" y="0"/>
+</item>
+<item historyLabel="ShowVenues.php" index="3">
+<position info="not_deleted" x="5691" y="0"/>
+</item>
+<item historyLabel="SummaryReport.php" index="0">
+<position info="not_deleted" x="10040" y="656"/>
+</item>
+<item historyLabel="ShowVenues.php" index="3">
+<position info="not_deleted" x="6758" y="0"/>
+</item>
+<item historyLabel="userHome.php" index="2">
+<position info="not_deleted" x="4252" y="109"/>
+</item>
+<item historyLabel="SummaryReport.php" index="0">
+<position info="not_deleted" x="10040" y="656"/>
+</item>
+<item historyLabel="ShowVenues.php" index="3">
+<position info="not_deleted" x="6758" y="0"/>
+</item>
+<item historyLabel="SummaryReport.php" index="0">
+<position info="not_deleted" x="5566" y="124"/>
+</item>
+<item historyLabel="ShowVenues.php" index="3">
+<position info="not_deleted" x="4437" y="0"/>
+</item>
+<item historyLabel="userHome.php" index="2">
+<position info="not_deleted" x="0" y="6234"/>
+</item>
+<item historyLabel="ContactUS.php" index="5">
+<position info="not_deleted" x="4940" y="0"/>
+</item>
+<item historyLabel="ContactUs.php" index="1">
+<position info="not_deleted" x="2467" y="228"/>
+</item>
+<item historyLabel="ContactUS.php" index="5">
+<position info="not_deleted" x="4940" y="0"/>
+</item>
+<item historyLabel="userHome.php" index="2">
+<position info="not_deleted" x="4412" y="0"/>
+</item>
+<item historyLabel="ContactUS.php" index="5">
+<position info="not_deleted" x="4940" y="0"/>
+</item>
+<item historyLabel="ContactUs.php" index="6">
+<position/>
+</item>
+<item historyLabel="ContactUS.php" index="5">
+<position info="not_deleted" x="5050" y="3"/>
+</item>
+<item historyLabel="ContactUs.php" index="6">
+<position info="not_deleted" x="2864" y="0"/>
+</item>
+<item historyLabel="ShowVenues.php" index="7">
+<position info="not_deleted" x="4437" y="0"/>
+</item>
+<item historyLabel="ContactUs.php" index="6">
+<position info="not_deleted" x="2864" y="0"/>
+</item>
+<item historyLabel="Homepage.php" index="8">
+<position info="not_deleted" x="3395" y="673"/>
+</item>
+<item historyLabel="customerLogin.php" index="9">
+<position info="not_deleted" x="3033" y="3"/>
+</item>
+<item historyLabel="Homepage.php" index="8">
+<position info="not_deleted" x="3395" y="673"/>
+</item>
+<item historyLabel="ShowVenues.php" index="10">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="RegisterVendor.php" index="11">
+<position info="not_deleted" x="637" y="0"/>
+</item>
+<item historyLabel="ShowVenues.php" index="10">
+<position info="not_deleted" x="2970" y="0"/>
+</item>
+<item historyLabel="findVendors.php" index="12">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="ShowVenues.php" index="10">
+<position info="not_deleted" x="3858" y="5"/>
+</item>
+<item historyLabel="findVendors.php" index="12">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Homepage.php" index="13">
+<position info="not_deleted" x="12858" y="673"/>
+</item>
+<item historyLabel="ShowVenues.php" index="10">
+<position info="not_deleted" x="3858" y="5"/>
+</item>
+<item historyLabel="RegisterVendor.php" index="11">
+<position info="not_deleted" x="637" y="0"/>
+</item>
+<item historyLabel="findVendors.php" index="12">
+<position info="not_deleted" x="16795" y="0"/>
+</item>
+<item historyLabel="ShowVenues.php" index="10">
+<position info="not_deleted" x="4558" y="0"/>
+</item>
+<item historyLabel="findVendors.php" index="12">
+<position info="not_deleted" x="386" y="0"/>
+</item>
+<item historyLabel="verifyCustomer.php" index="14">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="customerLogin.php" index="15">
+<position info="not_deleted" x="2655" y="0"/>
+</item>
+<item historyLabel="ShowVenues.php" index="10">
+<position info="not_deleted" x="4558" y="0"/>
+</item>
+<item historyLabel="RegisterVendor.php" index="11">
+<position info="not_deleted" x="637" y="0"/>
+</item>
+<item historyLabel="findVendors.php" index="12">
+<position info="not_deleted" x="386" y="0"/>
+</item>
+<item historyLabel="SummarizeVendors.php" index="16">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="ShowVenues.php" index="17">
+<position info="not_deleted" x="4558" y="0"/>
+</item>
+<item historyLabel="userHome.php" index="18">
+<position info="not_deleted" x="1434" y="0"/>
+</item>
+<item historyLabel="DaysToEvent.php" index="19">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="verifyCustomer.php" index="20">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="userHome.php" index="18">
+<position info="not_deleted" x="4605" y="3"/>
+</item>
+<item active="true" historyLabel="ContactUS.php" index="21">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+</navigationHistory>
+<input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
+</page>
+<workbenchWindowAdvisor/>
+<actionBarAdvisor/>
+<trimLayout>
+<trimArea IMemento.internal.id="128">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
+</trimArea>
+<trimArea IMemento.internal.id="1024">
+<trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
+<trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+</trimArea>
+</trimLayout>
+</window>
+<mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="ContactUS.php" tooltip="Event_Management/Logins/ContactUS.php">
+<persistable path="/Event_Management/Logins/ContactUS.php"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="DaysToEvent.php" tooltip="Event_Management/Logins/DaysToEvent.php">
+<persistable path="/Event_Management/Logins/DaysToEvent.php"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="userHome.php" tooltip="Event_Management/Logins/userHome.php">
+<persistable path="/Event_Management/Logins/userHome.php"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="SummarizeVendors.php" tooltip="Event_Management/Logins/SummarizeVendors.php">
+<persistable path="/Event_Management/Logins/SummarizeVendors.php"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="customerLogin.php" tooltip="Event_Management/Logins/customerLogin.php">
+<persistable path="/Event_Management/Logins/customerLogin.php"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="verifyCustomer.php" tooltip="Event_Management/Logins/verifyCustomer.php">
+<persistable path="/Event_Management/Logins/verifyCustomer.php"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="findVendors.php" tooltip="Event_Management/findVendors.php">
+<persistable path="/Event_Management/findVendors.php"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="RegisterVendor.php" tooltip="Event_Management/RegisterVendor.php">
+<persistable path="/Event_Management/RegisterVendor.php"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="ShowVenues.php" tooltip="Event_Management/ShowVenues.php">
+<persistable path="/Event_Management/ShowVenues.php"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="ViewComments.php" tooltip="Event_Management/Logins/ViewComments.php">
+<persistable path="/Event_Management/Logins/ViewComments.php"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="ContactUs.php" tooltip="Event_Management/ContactUs.php">
+<persistable path="/Event_Management/ContactUs.php"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="getVendorDetails.php" tooltip="Event_Management/Logins/getVendorDetails.php">
+<persistable path="/Event_Management/Logins/getVendorDetails.php"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="removeVendor.php" tooltip="Event_Management/Logins/removeVendor.php">
+<persistable path="/Event_Management/Logins/removeVendor.php"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="RemoveEvent.php" tooltip="Event_Management/Logins/RemoveEvent.php">
+<persistable path="/Event_Management/Logins/RemoveEvent.php"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="saveVendorList.php" tooltip="Event_Management/Logins/saveVendorList.php">
+<persistable path="/Event_Management/Logins/saveVendorList.php"/>
+</file>
+</mruList>
+</workbench>

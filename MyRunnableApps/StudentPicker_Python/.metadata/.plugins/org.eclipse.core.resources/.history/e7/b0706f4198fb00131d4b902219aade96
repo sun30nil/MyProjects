@@ -1,0 +1,208 @@
+'''
+Created on Jun 13, 2014
+
+@author: Sunil
+'''
+from tkinter import *
+from tkinter.filedialog import askopenfilename
+import xlrd
+from ConnectMongo import *
+from MyDialog1 import MyDialog1
+from MyRadioSelector import MyRadioSelector
+from pymongo import errors
+from random import randint
+myGUI = Tk()
+
+myGUI.title("Random Student App")
+myGUI.geometry("800x600")
+myGUI.configure(background='black')
+
+var_filename = StringVar()
+
+def chooseFile():
+    var_filename = askopenfilename() # show an "Open" dialog box and return the path to the selected file
+    label = Label( myGUI, text=var_filename, relief=FLAT )
+    label.pack()
+    #print(var_filename)
+    readFile(var_filename)
+    
+button = Button(myGUI, text="Choose a File",command=chooseFile,bg="pink")
+button.pack(side=LEFT)
+
+row_array = {}
+def readFile(var_filename):
+    workbook = xlrd.open_workbook(var_filename)
+    worksheet = workbook.sheet_by_index(0)
+    count_rows = 0
+    for current_row in range(worksheet.nrows):
+        if(count_rows>=1):
+            roll_no = worksheet.row(current_row)[0]
+            name = worksheet.row(current_row)[1]
+            topic = worksheet.row(current_row)[2]
+            str_topic = str(topic.value)
+            str_topic = str_topic.replace('\\xa0', '')
+            col_array = {}
+            col_array['rollno'] = roll_no.value
+            col_array['name'] = name.value
+            col_array['topic'] = str_topic
+            row_array[roll_no.value] = col_array
+            count_rows+=1
+        else:
+            count_rows+=1
+            #print (name.value)
+    #callForPrint()
+        #print (roll_no, name, str_topic)
+
+def callForPrint():
+    print(len(row_array))
+    for(i,eachrow) in row_array.items():
+        print(i,eachrow['topic'])
+        
+def saveToDB():
+    database = ConnectMongo("AllStudents") #name of the database
+    database.getConnectionDB()
+    collcn = database.createCollection("inStudents")  #name of the table
+    for(i,eachrow) in row_array.items():
+        stmt = {'roll_no':eachrow['rollno'],'name':eachrow['name'],'subject':eachrow['topic']}
+        try:
+            collcn.insert(stmt)
+        except errors.AutoReconnect as e:
+            label1 = Label( myGUI, text="Unable to save", relief=FLAT )
+            label1.place(x=20, y=30)
+            label1.pack()      
+            print ('Warning', e)
+            
+    database.closeConnection()
+    label1 = Label( myGUI, text="Successfully Saved!", relief=FLAT )
+    label1.place(x=20, y=30)
+    label1.pack()          
+          
+button1 = Button(myGUI, text="Save to DB",command=saveToDB,bg="cyan")
+button1.pack(side=LEFT)
+
+row_arrayDB = {}
+roll_list = []
+def readFromDB():
+    button2.pack_forget()
+    button3.pack(side=BOTTOM,padx=50, pady=50) #pick students enabled here
+    database = ConnectMongo("AllStudents") #name of the database
+    database.getConnectionDB()
+    collcn = database.createCollection("inStudents")  #name of the table
+    cursor1 = collcn.find()
+    for record in cursor1:
+        #print(record.get("roll_no"))
+        col_arrayDB = {}
+        roll_list.append(record.get("roll_no"))
+        col_arrayDB['rollno'] = record.get("roll_no")
+        col_arrayDB['name'] = record.get("name")
+        col_arrayDB['topic'] = record.get("subject")
+        row_arrayDB[record.get("roll_no")] = col_arrayDB
+        
+    database.closeConnection()
+
+button2 = Button(myGUI, text="Read DB",command=readFromDB,bg="red")
+button2.pack(side=BOTTOM,padx=50,pady=10)
+
+
+def pickStudent():
+    uplimit = len(roll_list)
+    uplimit = uplimit-1
+    rand_no = randint(0,uplimit)
+    if (len(roll_list)==0):
+        mrsObj = MyRadioSelector()
+        #print(s.get(),"vlaue of s selected")
+        mrsObj.showDialogBox(indicator,10,s.get())
+    else:
+        picked_roll = roll_list.pop(rand_no) # removing the random selected student from the list
+        all_details = row_arrayDB[picked_roll]
+        mrsObj = MyRadioSelector()
+        #print(s.get(),"vlaue of s selected")
+        mrsObj.showDialogBox(all_details,v.get(),s.get())
+        
+    
+    
+           
+button3 = Button(myGUI, text="Pick a Student",command=pickStudent, bg="green")
+
+def showStudents():
+    yetToGiveList = []
+    database = ConnectMongo("AllStudents") #name of the database
+    database.getConnectionDB()
+    collcn = database.createCollection("inStudents")  #name of the table
+    cursor1 = collcn.find() 
+    counter = 1
+    yetToGiveList.append("Students left for the task!")
+    yetToGiveList.append("")
+    for record in cursor1:
+        yetToGiveList.append(str(counter)+") "+record.get("name"))
+        counter+= 1
+            
+    database.closeConnection()
+    all_students = '\n'.join(yetToGiveList)
+    MyDialog1(all_students)
+    
+def showDoneStudents():
+    givenList = []
+    database = ConnectMongo("AllStudents") #name of the database
+    database.getConnectionDB()
+    collcn = database.createCollection("outStudents")  #name of the table
+    cursor1 = collcn.find() 
+    counter = 1
+    givenList.append("Students done with the task!")
+    givenList.append("")
+    for record in cursor1:
+        givenList.append(str(counter)+") "+record.get("name"))
+        counter+= 1
+            
+    database.closeConnection()
+    all_students = '\n'.join(givenList)
+    MyDialog1(all_students)
+    
+button4_1 = Button(myGUI, text="Show done students",command=showDoneStudents,bg="light sky blue")
+button4_1.pack(side=RIGHT)
+
+button4 = Button(myGUI, text="Show pending students",command=showStudents,bg="hot pink")
+button4.pack(side=RIGHT)
+options = [("Name Only",1),("Roll No only",2),("Name+Roll No",3),("Name+Topic",4),("All Three",5)]
+v = IntVar()
+v.set(1)   
+
+s = IntVar()
+s.set(25)
+    # default is name only
+frame1 = Frame(myGUI, width=500, height=500) 
+def sendOption():
+    frame1.pack_forget()
+    
+def customizeDisplay():
+    Label(frame1, text="""How you want the selected student to be displayed?""",justify = LEFT,padx = 20).pack()
+    for txt, val in options:
+        rad = Radiobutton(frame1, text=txt, padx = 20, variable=v, value=val).pack(anchor=W)
+    Label(frame1, text="""Font Size for Names Display?""",justify = LEFT,padx = 20).pack()    
+    sel = OptionMenu(frame1, s,"15","20","25","30","35","40").pack(anchor=W)
+        
+    buttonC = Button(frame1, text="Done",command=sendOption)
+    buttonC.pack()
+    #root.mainloop()
+    frame1.pack()
+
+
+       
+button5 = Button(myGUI, text="Customize Display",command=customizeDisplay,bg="chocolate")
+button5.pack(side=RIGHT)
+
+def deleteDB():
+    database = ConnectMongo("AllStudents") #name of the database
+    dbobj = database.getConnectionDB()
+    dbobj.drop_database("AllStudents")
+    database.closeConnection()
+    text = Text(myGUI)
+    text.insert(INSERT, "Close the App and Start again by uploading file!")
+    text.configure(state=DISABLED,bg="pink",height=2,width=100)
+    text.pack()          
+
+button6 = Button(myGUI, text="Start Afresh",command=deleteDB, bg="khaki")
+button6.pack(side=TOP)
+
+myGUI.mainloop()
+

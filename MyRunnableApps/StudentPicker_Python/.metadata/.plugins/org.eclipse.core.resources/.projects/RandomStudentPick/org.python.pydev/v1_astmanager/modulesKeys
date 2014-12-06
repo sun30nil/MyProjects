@@ -1,0 +1,13 @@
+MODULES_MANAGER_V2
+ConnectMongo|E:\PythonProject\RandomStudentPick\Main\ConnectMongo.py
+GUI|E:\PythonProject\RandomStudentPick\Main\GUI.py
+Main.ConnectMongo|E:\PythonProject\RandomStudentPick\Main\ConnectMongo.py
+Main.GUI|E:\PythonProject\RandomStudentPick\Main\GUI.py
+Main.MyDialog1|E:\PythonProject\RandomStudentPick\Main\MyDialog1.py
+Main.MyRadioSelector|E:\PythonProject\RandomStudentPick\Main\MyRadioSelector.py
+Main.__init__|E:\PythonProject\RandomStudentPick\Main\__init__.py
+Main.setup|E:\PythonProject\RandomStudentPick\Main\setup.py
+MyDialog1|E:\PythonProject\RandomStudentPick\Main\MyDialog1.py
+MyRadioSelector|E:\PythonProject\RandomStudentPick\Main\MyRadioSelector.py
+__init__|E:\PythonProject\RandomStudentPick\Main\__init__.py
+setup|E:\PythonProject\RandomStudentPick\Main\setup.py

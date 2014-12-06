@@ -1,0 +1,25 @@
+<?php
+require_once("function_only.inc.php");
+
+$vid = $_GET['vend_id'];
+$vname = $_GET['v_name'];
+$user = $_SESSION['username'];
+$result = mysqli_query($con,"select * from comments where user_id='$user'");
+$result1 = mysqli_query($con,"SELECT * FROM `comments` WHERE user_id in (select userid from family where admin='$user')");
+echo "<table>";
+
+echo "<tr><td>Your Comments</td><td></td></tr>";
+while($adminComm = mysqli_fetch_array($result))
+{
+	
+}
+  	echo "<tr><td>Vendor Name</td><td>".$my_vendor['fn_name']."</td></tr>";
+  	echo "<tr><td>Venue Types</td><td>".$my_vendor['fn_venuetypes']."</td></tr>";
+  	echo "<tr><td>Maximum Capacity</td><td>".$my_vendor['fn_capacity']."</td></tr>";
+  	echo "<tr><td>Location</td><td>".$my_vendor['fn_location']."</td></tr>";
+  	echo "<tr><td>Phone</td><td>".$my_vendor['fn_phone']."</td></tr>";
+  	echo "<tr><td>Address</td><td>".$my_vendor['fn_address']."</td></tr>";
+
+echo "</table>";
+
+?>

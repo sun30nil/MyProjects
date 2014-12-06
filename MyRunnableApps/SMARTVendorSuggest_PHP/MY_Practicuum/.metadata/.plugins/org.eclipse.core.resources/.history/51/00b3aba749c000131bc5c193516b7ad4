@@ -1,0 +1,15 @@
+<?php
+include 'DBConnection.php';
+$obj=new Database();
+$con=$obj->openConnection();
+
+$name=$_POST("name");
+mysqli_query($con,"INSERT INTO register 
+VALUES ('Peter', 'Griffin',35)");
+
+mysqli_query($con,"INSERT INTO Persons (FirstName, LastName, Age)
+VALUES ('Glenn', 'Quagmire',33)");
+
+mysqli_close($con);
+
+?>

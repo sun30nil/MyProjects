@@ -1,0 +1,22 @@
+<?php
+include 'DBConnection.php';
+$obj=new Database();
+$con=$obj->openConnection();
+
+if($_POST)
+{
+	$name=$_POST("name");
+	$loc=$_POST("location");
+	$phone=$_POST("phone");
+	$email = $_POST("email");
+	$username=$_POST("username");
+	$password=$_POST("password");
+	$gender=$_POST("gender");
+}
+
+mysqli_query($con,"INSERT INTO register 
+VALUES ($name, $loc,$phone,$email,$username,$password,$gender,'CURRENT_TIMESTAMP'));
+
+$obj->closeConnection($con);
+
+?>

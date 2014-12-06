@@ -1,0 +1,69 @@
+<?php
+?>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Vendor Login</title>
+<!--Load the AJAX API-->
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="//www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1', {packages: ['table']});
+    </script>   
+
+<script type='text/javascript'>
+$(document).ready(function(){
+    $("#add_err").css('display', 'none', 'important');
+     $("#login").click(function(){    
+          username=$("#name").val();
+          password=$("#word").val();
+          $.ajax({
+           type: "POST",
+           url: "VerifyVendor.php",
+            data: "name="+username+"&pwd="+password,
+           success: function(html){    
+            if(html=='true')    {
+             //$("#add_err").html("right username or password");
+             window.location="dashboard.php";
+            }
+            else    {
+            $("#add_err").css('display', 'inline', 'important');
+             $("#add_err").html("<img src='images/alert.png' />Wrong username or password");
+            }
+           },
+           beforeSend:function()
+           {
+            $("#add_err").css('display', 'inline', 'important');
+            $("#add_err").html("<img src='images/ajax-loader.gif' /> Loading...")
+           }
+          });
+        return false;
+    });
+});
+
+
+Read more: http://www.ondeweb.in/ajax-login-form-with-jquery-and-php/#ixzz30vpFAQMU
+</script>
+
+</head>
+<body bgcolor="khaki">
+<div class="loginform-in">
+<h1>User Login</h1>
+<div class="err" id="add_err"></div>
+<fieldset>
+    <form action="wdCalendar/sample.php" method="post">
+        <ul>
+            <li> <label for="name">Username </label>
+            <input type="text" size="30"  name="name" id="name"  /></li>
+            <li> <label for="name">Password</label>
+            <input type="password" size="30"  name="word" id="word"  /></li>
+            <li> <label></label>
+            <input type="submit" id="login" name="login" value="Login" class="loginbutton" ></li>
+        </ul>
+         </form>    
+</fieldset>
+</div>
+
+</body>
+</html>

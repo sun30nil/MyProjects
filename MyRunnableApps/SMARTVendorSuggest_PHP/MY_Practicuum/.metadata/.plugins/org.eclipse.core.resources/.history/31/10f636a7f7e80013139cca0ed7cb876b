@@ -1,0 +1,41 @@
+<?php
+session_start();
+$tomail = $_GET['v_mail'];
+$vendor = $_GET['v_name'];
+?>
+<html>
+<head>
+<title>Sending Mail to <?php echo $_GET['v_name'];?></title>
+<script type="text/javascript">
+function sendingMail()
+{
+<?php echo "var v=docum"?>
+	
+	<?php
+			   $to = "xyz@somedomain.com";
+			   $subject = "This is subject";
+			   $message = "This is simple text message.";
+			   $header = "From:abc@somedomain.com \r\n";
+			   $retval = mail ($to,$subject,$message,$header);
+			   if( $retval == true )  
+			   {
+			      echo "Message sent successfully...";
+			   }
+			   else
+			   {
+			      echo "Message could not be sent...";
+			   }
+			?>
+}
+</script>
+</head>
+<body>
+
+<form onsubmit="sendingMail();">
+<label>Write your message for <?php echo $vendor;?></label>
+<textarea id="> </textarea>
+
+</form>
+
+</body>
+</html>

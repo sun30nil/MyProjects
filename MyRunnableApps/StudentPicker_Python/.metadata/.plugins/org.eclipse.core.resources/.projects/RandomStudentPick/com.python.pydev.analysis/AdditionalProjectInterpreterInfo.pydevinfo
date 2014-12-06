@@ -1,0 +1,65 @@
+-- VERSION_4
+-- START DISKCACHE
+E:\PythonProject\.metadata\.plugins\org.eclipse.core.resources\.projects\RandomStudentPick\com.python.pydev.analysis\v2_indexcache
+Main.__init__|1402633378579|E:\PythonProject\RandomStudentPick\Main\__init__.py
+Main.MyRadioSelector|1403611550790|E:\PythonProject\RandomStudentPick\Main\MyRadioSelector.py
+Main.setup|1403070618112|E:\PythonProject\RandomStudentPick\Main\setup.py
+Main.ConnectMongo|1402992974109|E:\PythonProject\RandomStudentPick\Main\ConnectMongo.py
+Main.MyDialog1|1402936347874|E:\PythonProject\RandomStudentPick\Main\MyDialog1.py
+Main.GUI|1403611490399|E:\PythonProject\RandomStudentPick\Main\GUI.py
+-- END DISKCACHE
+-- START DICTIONARY
+11
+9=ConnectMongo.createCollection
+8=ConnectMongo
+7=MyDialog1
+5=Main.MyRadioSelector
+1=Main.setup
+3=Main.ConnectMongo
+10=ConnectMongo.__init__
+4=Main.MyDialog1
+6=MyRadioSelector
+11=MyRadioSelector.__init__
+2=Main.GUI
+-- END DICTIONARY
+-- START TREE 1
+25
+app|1|app_title!11@
+bas|1|base!11@
+but|8|button4!19@button2!19@button5!19@button3!19@button!19@button1!19@button6!19@button4_1!19@
+cal|1|callForPrint!18@
+cho|1|chooseFile!18@
+con|1|ConnectMongo!25@
+cus|1|customizeDisplay!18@
+del|1|deleteDB!18@
+fra|1|frame1!19@
+inc|1|includes!11@
+mai|1|main_python_file!11@
+myd|1|MyDialog1!33@
+myg|1|myGUI!19@
+myr|1|MyRadioSelector!41@
+opt|1|options!19@
+pic|1|pickStudent!18@
+rea|2|readFile!18@readFromDB!18@
+rol|1|roll_list!19@
+row|2|row_array!19@row_arrayDB!19@
+s|1|s!19@
+sav|1|saveToDB!18@
+sen|1|sendOption!18@
+sho|2|showDoneStudents!18@showStudents!18@
+v|1|v!19@
+var|1|var_filename!19@
+-- END TREE
+-- START TREE 2
+10
+__i|3|__init__!6&42@__init__!7&34@__init__!8&26@
+_co|2|_collection!9&27@_conn!10&27@
+_db|1|_db!10&27@
+clo|1|closeConnection!8&26@
+cre|1|createCollection!8&26@
+dbo|1|dbobj!8&27@
+get|1|getConnectionDB!8&26@
+ope|1|openWindow!7&34@
+sho|1|showDialogBox!6&42@
+v|1|v!11&43@
+-- END TREE

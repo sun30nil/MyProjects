@@ -1,0 +1,27 @@
+<?php
+echo "Hello World";
+?>
+<html>
+<body>
+
+<form method="post" action="CheckDB.php" >
+        <table border="1" >
+            <tr>
+                <td><label for="users_email">Email</label></td>
+                <td><input type="text" 
+                  name="uname" id="uname"></td>
+            </tr>
+            <tr>
+                <td><label for="users_pass">Password</label></td>
+                <td><input name="password" 
+                  type="password" id="password"></input></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Submit"/>
+                <td><input type="reset" value="Reset"/>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>

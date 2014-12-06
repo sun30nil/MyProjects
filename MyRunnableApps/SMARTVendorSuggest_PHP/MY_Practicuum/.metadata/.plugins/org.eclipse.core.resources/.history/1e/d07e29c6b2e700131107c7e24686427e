@@ -1,0 +1,31 @@
+<?php
+require_once("function_only.inc.php");
+
+$vid = $_GET['vend_id'];
+$vname = $_GET['v_name'];
+$user = $_SESSION['username'];
+
+$obj=new Database();
+$con=$obj->openConnection();
+
+$result = mysqli_query($con,"select * from comments where user_id='$user'");
+$result1 = mysqli_query($con,"SELECT * FROM `comments` WHERE user_id in (select userid from family where admin='$user')");
+echo "<table>";
+
+echo "<tr><td bgcolor='pink' >Your Comments</td><td></td></tr>";
+while($adminComm = mysqli_fetch_array($result))
+{
+	echo "<tr><td>Rating</td><td>".$adminComm['rating']."</td></tr>";
+  	echo "<tr><td>Comments</td><td>".$adminComm['comments']."</td></tr>";
+}
+echo "<tr><td style='height:50px'></td><td></td></tr>";
+echo "<tr><td bgcolor='khakhi' style='height:125px'>Your Family </td><td>Members Comments</td></tr>";
+  	while($familyComm = mysqli_fetch_array($result1))
+{
+	echo "<tr><td>Family Member ID</td><td>".$familyComm['user_id']."</td></tr>";
+	echo "<tr><td>Rating</td><td>".$familyComm['rating']."</td></tr>";
+  	echo "<tr><td>Comments</td><td>".$familyComm['comments']."</td></tr>";
+}
+echo "</table>";
+$obj->closeConnection($con);
+?>

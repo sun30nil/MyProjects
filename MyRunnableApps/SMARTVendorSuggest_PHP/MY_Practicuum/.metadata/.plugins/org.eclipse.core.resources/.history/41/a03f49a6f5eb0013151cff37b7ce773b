@@ -1,0 +1,11 @@
+<?php
+include "DBConnection.php";
+session_start();
+$username = $_SESSION['username'];
+
+  $obj=new Database();
+  $con=$obj->openConnection();
+
+$result = mysqli_query($con,"select event_date from savedevents where user_id='$username'");
+
+?>

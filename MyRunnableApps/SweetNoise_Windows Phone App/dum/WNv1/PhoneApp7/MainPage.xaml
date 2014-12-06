@@ -1,0 +1,91 @@
+﻿<phone:PhoneApplicationPage
+    
+    x:Class="PhoneApp7.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28" Background="GreenYellow">
+            <Grid Background="Aqua">
+                <TextBlock Text="Apti Noise" FontSize="25" HorizontalAlignment="Center" Foreground="Black" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0*" />
+                    <RowDefinition Height="Auto" MinHeight="72" />
+                </Grid.RowDefinitions>
+                <MediaElement x:Name="media" Source="white.mp3" Grid.Column="0" Grid.Row="0"  Volume="1" Grid.ColumnSpan="3" Margin="0,0,0,72" Grid.RowSpan="2" />
+                <!-- Stops media playback.-->
+                <Button Foreground="Black" Click="StopMedia" Grid.Column="0" Grid.Row="1" Content="Stop" />
+                <!-- Pauses media playback. -->
+                <Button Foreground="Black" Click="PauseMedia" Grid.Column="1" Grid.Row="1" Content="Pause" />
+                <!-- Begins media playback. -->
+                <Button Foreground="Black" Click="PlayMedia" Grid.Column="2" Grid.Row="1" Content="Play" />
+
+            </Grid>
+            <!-- Volume slider. This slider allows a Volume range between 0 and 1. -->
+            <Grid>
+                <TextBlock Foreground="DarkBlue" VerticalAlignment="Center" Margin="5"  >Volume</TextBlock>
+            </Grid>
+            <Slider Name="volumeSlider" VerticalAlignment="Center" ValueChanged="ChangeMediaVolume" 
+       Minimum="0" Maximum="10"  Margin="47,0,105,0" Height="84.003" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
+                <Slider.RenderTransform>
+                    <CompositeTransform Rotation="-0.019"/>
+                </Slider.RenderTransform>
+            </Slider>
+
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1 " Margin="0,0,0,40" >
+            <Grid HorizontalAlignment="Center">
+                <TextBlock Foreground="YellowGreen" VerticalAlignment="Center" Margin="19,0,-9,429"  >Solve Puzzle</TextBlock>
+            </Grid>
+            <Button Foreground="Green" Content="Start" HorizontalAlignment="Left" Click="Button_Click_4"  Margin="10,28,0,0" VerticalAlignment="Top"  Width="113" Height="70"/>
+
+            <TextBlock x:Name="textBlock5" Foreground="DarkOrange" HorizontalAlignment="Left" Margin="241,33,0,0" TextWrapping="Wrap" Text="ti" VerticalAlignment="Top"/>
+
+            <TextBlock x:Name="kkk" Foreground="Green" HorizontalAlignment="Left" Margin="362,28,0,0" TextWrapping="Wrap" Text="Score:" VerticalAlignment="Top"/>
+            <TextBlock x:Name="scoreBlock" Foreground="Green" HorizontalAlignment="Left" Margin="420,28,0,0" TextWrapping="Wrap" Text="oo" VerticalAlignment="Top"/>
+
+            <TextBlock x:Name="textBlock1" Foreground="Cyan" HorizontalAlignment="Left" Margin="181,85,0,0" TextWrapping="Wrap" Text="ff" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock3" Foreground="Red" FontSize="30" HorizontalAlignment="Left" Margin="241,80,0,0" TextWrapping="Wrap" Text="ff" VerticalAlignment="Top" RenderTransformOrigin="0.632,0.575"/>
+            <TextBlock x:Name="textBlock2" Foreground="Cyan" HorizontalAlignment="Left" Margin="300,85,0,0" TextWrapping="Wrap" Text="ff" VerticalAlignment="Top" RenderTransformOrigin="0.692,0.259"/>
+            <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="72" Margin="76,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330"/>
+
+            <TextBlock Foreground="YellowGreen" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="19,297,-9,132"  >Select Noise</TextBlock>
+
+            <Button Foreground="Gray" Content="Check" HorizontalAlignment="Left" Margin="165,205,0,0" VerticalAlignment="Top" Click="Button_Click" Width="158"/>
+            <Button Foreground="Brown" Content="Brown" HorizontalAlignment="Left" Margin="181,345,0,0" VerticalAlignment="Top" Click="Button_Click_2"/>
+            <Button Foreground="White" Content="White" HorizontalAlignment="Left" Margin="28,345,0,0" VerticalAlignment="Top" Click="Button_Click_1" RenderTransformOrigin="0.559,0.608"/>
+            <Button Foreground="Pink" Content="Pink " HorizontalAlignment="Left" Margin="331,345,0,0" VerticalAlignment="Top" Click="Button_Click_3" Width="104"/>
+
+        </Grid>
+
+    </Grid>
+
+</phone:PhoneApplicationPage>
+

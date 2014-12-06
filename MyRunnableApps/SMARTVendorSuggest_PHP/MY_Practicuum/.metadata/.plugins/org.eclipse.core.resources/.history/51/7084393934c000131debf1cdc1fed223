@@ -1,0 +1,24 @@
+<?php
+include 'DBConnection.php';
+
+$obj=new Database();
+$con=$obj->openConnection();
+
+$result = mysqli_query($con,"SELECT * FROM verify");
+$uname=$_POST['uname'];
+$password=$_POST['password'];
+while($row = mysqli_fetch_array($result))
+  {
+     if($uname==$row['Username']&&$password==$row['Password'])
+     {
+     	echo "Welcome!".$uname;
+     }
+     else 
+     {
+     	echo "Invalid credentials";
+     	header("Location: HomePage.php");
+        die();
+     }
+  }
+$obj->closeConnection($con);  
+?>

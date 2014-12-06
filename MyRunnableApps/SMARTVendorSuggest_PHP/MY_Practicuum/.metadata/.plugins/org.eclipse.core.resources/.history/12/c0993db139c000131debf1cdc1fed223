@@ -1,0 +1,27 @@
+<?php
+class Database
+{
+	var $host="localhost";
+	public $userid="root";
+	public $password="";
+	public $database_name="authenticate";
+	function openConnection()
+	{
+	$con=mysqli_connect($this->host,$this->userid,$this->password,$this->database_name);
+
+		// Check connection
+		if (mysqli_connect_errno())
+		  {
+		     echo "Failed to connect to MySQL: " . mysqli_connect_error();
+		  }
+  else 
+  return $con;
+	}
+	
+	function closeConnection($con)
+	{
+		mysqli_close($con);
+	}
+
+}
+// Create connection

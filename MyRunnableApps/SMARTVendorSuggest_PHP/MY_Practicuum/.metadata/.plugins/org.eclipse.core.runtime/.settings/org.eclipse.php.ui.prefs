@@ -1,0 +1,6 @@
+#Tue Apr 08 15:37:47 PDT 2014
+useAnnotationsPrefPage=true
+eclipse.preferences.version=1
+org.eclipse.php.ui.wizards.srcBinFoldersInNewProjects=true
+org.eclipse.php.core.workspaceDefaultLocale=en_US
+useQuickDiffPrefPage=true

@@ -1,0 +1,48 @@
+<?php 
+include 'DBConnection.php';
+
+$obj1=new Database();
+$con1=$obj1->openConnection();
+if($_POST)
+{
+	$role = $_POST["role"];
+	$name = $_POST["fname"];
+	$phone = $_POST["mobileno"];
+	$email = $_POST["emailId"];
+	$address = $_POST["Address"];
+	$location = $_POST["location"];
+	$price = $_POST["price"];
+	$city = $_POST["city"];
+	$pay_type = $_POST['Payment'];
+	$capacity = $_POST['capacity'];
+	$venueType = $_POST['venueType'];
+	$foodType = $_POST['FoodType'];
+	$OrderType = $_POST['OrderType'];
+	$PhotoType = $_POST['PhotoType'];
+}
+
+if($role=="FN")
+{
+   $myquery="INSERT INTO venuelist VALUES ('$fn_id', '$name', $capacity, '$venueType', '$phone', '$address', '$location', '$city',$price, NOW())";
+}
+//echo "Query: ".$myquery;
+else if($role=="CAT")
+{
+   $myquery="INSERT INTO catererlist VALUES ('$cat_id', '$name','$address','$location','$city','N/A','$pay_type', $capacity, '$foodType', '$OrderType', '$phone',$price, NOW())";
+}
+else if($role=="DEC")
+{
+   $myquery="INSERT INTO decoratorlist VALUES ('$dec_id', '$name','$address','$location', '$city', 'N/A', '$pay_type',$price,'$phone', NOW())";
+}
+else if($role=="PH")
+{
+   $myquery="INSERT INTO photographerlist VALUES ('$ph_id', '$name', $capacity, '$venueType', '$phone', '$address', '$location', '$city',$price, NOW())";
+}
+$retval = mysqli_query(  $con1 , $myquery);
+if(! $retval )
+{
+  die('Sorry! Could not enter data: ' . mysql_error());
+}
+$obj1->closeConnection($con1);
+echo "<h1>You have successfully registered! Thank You</h1>"
+?>

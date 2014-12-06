@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;MachLearning&apos; to &apos;WordsFiles&apos;&#x0D;&#x0A;- Original element: &apos;Event_Management/MachLearning&apos;&#x0D;&#x0A;- Renamed element: &apos;Event_Management/WordsFiles&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;MachLearning&apos;" flags="589830" hierarchical="false" id="org.eclipse.dltk.ui.rename.script.folder" input="/&lt;MachLearning" name="WordsFiles" qualified="false" references="true" stamp="1401970200093" textual="false" version="1.0"/>
+</session>
