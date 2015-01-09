@@ -1,0 +1,244 @@
+package indexer;
+import java.util.*;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Vector;
+
+import parser.PageLexer;
+import dictionary.AVLDictionary;
+import dictionary.BSTDictionary;
+import dictionary.DictionaryInterface;
+import dictionary.HashDictionary;
+import dictionary.ListDictionary;
+import dictionary.MyHashDictionary;
+import dictionary.ObjectIterator;
+import element.PageElementInterface;
+import element.PageHref;
+import element.PageImg;
+import element.PageNum;
+import element.PageWord;
+
+
+/**
+ * Web-indexing objects.  This class implements the Indexer interface
+ * using a list-based index structure.
+
+A Hash Map based implementation of Indexing 
+ * @param <E>
+
+ */
+public class Indexer<E> implements IndexerInterface<E>
+{
+  /** The constructor for ListWebIndex.
+   */
+
+  // Index Structure 
+  DictionaryInterface index;
+
+  // This is for calculating the term frequency
+  HashMap<?,?> wordFrequency;
+
+  public Indexer(String mode)
+  {
+    // hash - Dictionary Structure based on a Hashtable or HashMap from the Java collections 
+    // list - Dictionary Structure based on Linked List 
+    // myhash - Dictionary Structure based on a Hashtable implemented by the students
+    // bst - Dictionary Structure based on a Binary Search Tree implemented by the students
+    // avl - Dictionary Structure based on AVL Tree implemented by the students
+
+    if (mode.equals("hash")) 
+      index = new HashDictionary();
+    else if(mode.equals("list"))
+      index = new ListDictionary();
+    else if(mode.equals("myhash"))
+      index = new MyHashDictionary();
+    else if(mode.equals("bst"))
+      index = new BSTDictionary();
+    else if(mode.equals("avl"))
+      index = new AVLDictionary();
+  }
+
+  /** Add the given web page to the index.
+   *
+   * @param url The web page to add to the index
+   * @param keywords The keywords that are in the web page
+   * @param links The hyperlinks that are in the web page
+   */
+  public void addPage(URL url, ObjectIterator<E> keywords)  
+  {
+	  ObjectIterator<E> nwords=keywords;
+	  System.out.println(nwords.size());
+/*	  for (int i=0;i<nwords.size();i++)
+	  {
+		  System.out.println(nwords.next());
+	  }   */
+	 
+	  try 
+	   {
+	     FileWriter fw=new FileWriter("myengine.txt",true);
+		 fw.write(url+ System.getProperty("line.separator" ));  
+		 for (int i=0;i<nwords.size();i++)
+		  {
+			 fw.write(nwords.next()+System.getProperty( "line.separator" ));
+		  }
+		 fw.close();
+		}
+		
+		catch (Exception e)
+		{
+		System.err.println("Error writing to file");
+		}
+	  System.out.println("Data written to file successfully!");
+      ////////////////////////////////////////////////////////////////////
+      //  Write your Code here as part of Integrating and Running Mini Google assignment
+      //  
+      ///////////////////////////////////////////////////////////////////
+  }
+
+  /** Produce a printable representation of the index.
+   *
+   * @return a String representation of the index structure
+   */
+  public String toString()
+  {
+    ////////////////////////////////////////////////////////////////////
+      //  Write your Code here as part of Integrating and Running Mini Google assignment
+      //  
+      ///////////////////////////////////////////////////////////////////
+    return "You dont need to implement it\n";
+  }
+
+  /** Retrieve all of the web pages that contain the given keyword.
+   *
+   * @param keyword The keyword to search on
+   * @return An iterator of the web pages that match.
+   */
+  Vector v1=new Vector();
+  public ObjectIterator<PageElementInterface> retrievePages(PageWord keyword)
+  {
+	  try 
+	   {
+	     FileReader fr=new FileReader("myengine.txt");
+		 String s;
+		 BufferedReader br = new BufferedReader(fr); 
+		 while((s=br.readLine())!=null)
+		 {
+			v1.add(s);
+		 }
+		 fr.close();
+		}
+		
+		catch (Exception e)
+		{
+		System.err.println("Error opening/reading the file");
+		}
+	  System.out.println("\n\nEureka===============================================");
+	 // System.out.println("=============================="+keyword+"-------------"+);
+	  Iterator it=v1.iterator();
+	  System.out.println("=============================="+keyword+"-------------"+it.next());
+	  while(it.hasNext())
+	  {
+		 if(keyword.equals(it.next()))
+		  {
+			  System.out.println(it.next()+"Eureka===============================================");
+		  }
+	  }
+    ////////////////////////////////////////////////////////////////////
+      //  Write your Code here as part of Integrating and Running Mini Google assignment
+      //  
+      ///////////////////////////////////////////////////////////////////
+    return new ObjectIterator<PageElementInterface>(new Vector<PageElementInterface>());
+  }
+
+  /** Retrieve all of the web pages that contain any of the given keywords.
+   *  
+   * @param keywords The keywords to search on
+   * @return An iterator of the web pages that match.
+   * 
+   * Calculating the Intersection of the pages here itself
+   **/
+  public ObjectIterator<E> retrievePages(ObjectIterator<E> keywords)
+  {
+	  ObjectIterator<E> kwds= keywords;
+	  try 
+	   {
+	     FileReader fr=new FileReader("myengine.txt");
+		 String s;
+		 BufferedReader br = new BufferedReader(fr); 
+		 while((s=br.readLine())!=null)
+		 {
+		 for (int i=0;i<kwds.size();i++)
+		 {
+			 if(s.equals(kwds.next()))
+			 {
+				 return (ObjectIterator<E>) new ObjectIterator<PageElementInterface>(new Vector<PageElementInterface>());
+			 }
+		 }
+		 }
+		 fr.close();
+		}
+		
+		catch (Exception e)
+		{
+		System.err.println("Error opening/reading the file");
+		}
+    ////////////////////////////////////////////////////////////////////
+      //  Write your Code here as part of Integrating and Running Mini Google assignment
+      //  
+      ///////////////////////////////////////////////////////////////////
+    return null;
+  }
+
+  /** Save the index to a file.
+   *
+   * @param stream The stream to write the index
+   */
+  public void save(FileOutputStream stream) throws IOException
+  {
+    ////////////////////////////////////////////////////////////////////
+      //  Write your Code here as part of Integrating and Running Mini Google assignment
+      //  
+      ///////////////////////////////////////////////////////////////////
+  }
+
+  /** Restore the index from a file.
+   *
+   * @param stream The stream to read the index
+   */
+  public void restore(FileInputStream stream) throws IOException
+  {	
+		try {
+			System.out.println("Total file size to read (in bytes) : "
+					+ stream.available());
+ 
+			int content;
+			while ((content = stream.read()) != -1) 
+			{
+				System.out.print((char) content);
+			}
+ 
+		} catch (IOException e) 
+		{
+			e.printStackTrace();
+		}
+    ////////////////////////////////////////////////////////////////////
+      //  Write your Code here as part of Integrating and Running Mini Google assignment
+      //  
+      ///////////////////////////////////////////////////////////////////
+  }
+
+  /* Remove Page method not implemented right now
+   * @see searchengine.indexer#removePage(java.net.URL)
+   */
+  public void removePage(URL url)
+  {
+  }
+};

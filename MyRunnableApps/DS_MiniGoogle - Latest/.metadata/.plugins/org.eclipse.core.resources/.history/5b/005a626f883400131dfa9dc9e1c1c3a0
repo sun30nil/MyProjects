@@ -1,0 +1,119 @@
+package dictionary;
+
+public class MyHashDictionary  <K extends Comparable<K>, V> implements DictionaryInterface <K,V>
+{
+	private K key;
+	private V value;
+	MyHashDictionary <K , V> next,first,current,last;
+	protected int size=0;
+	
+	  private final int max = 20;
+	  private MyHashDictionary<K, V>[] Htable=new MyHashDictionary[max];
+	  
+	  public MyHashDictionary()
+		{
+			key=null;
+			value=null;
+			next=null;	
+		}
+	  public MyHashDictionary(K k, V v, MyHashDictionary <K , V> n)
+		{
+			key=k;
+			value=v;
+			next=n;
+		}
+	  
+	public K[] getKeys() 
+	{
+		String arr[]=new String [max];
+		for (int i=0;i<max;i++)
+		{
+			if(Htable[i]!=null)
+			{
+				MyHashDictionary<K , V> temp;
+				temp=Htable[i];
+				arr[i]=  (String) temp.key;
+			//	current=current.next;
+			}
+		}
+		return (K[]) arr;
+	}
+
+	public V getValue(K str) 
+	{
+		
+		for (int i=0;i<max;i++)
+		{
+			if(Htable[i]!=null)
+			{
+				MyHashDictionary<K , V> temp;
+				temp=Htable[i];
+				if((temp.key).equals(str))
+				{
+					if(temp.next!=null)
+					{
+					temp.value=(V) (temp.value+" "+temp.next.value);
+					return temp.value;
+					}
+					else
+					return temp.value;
+				}
+			}
+		}
+	//	System.out.println("test 5");
+		return null;
+	}
+	
+	public void insert(K key, V value) 
+	{
+
+		int index=hash(key);
+		System.out.println(index+"////////////////"+Htable[index]);
+			if(Htable[index]==null)
+			{
+				MyHashDictionary <K , V> newnode1=new MyHashDictionary <K , V>(key, value, null);
+				
+				first=newnode1;
+				Htable[index]=first;
+			}
+			
+			else
+			{
+				MyHashDictionary <K , V> newnode2=new MyHashDictionary <K , V>(key, value, null);
+			
+				newnode2.next=first; //(MyHashDictionary<K,V>) Htable[hash(key)];
+				first = newnode2;
+				Htable[index]=first;
+				
+			}
+				
+		}
+
+	public void remove(K key)
+	{
+		if(Htable[hash(key)].key.equals(key))
+		{
+			Htable[hash(key)]=null;
+		}
+		else System.out.println("Entered key is not found! SORRY");
+	}
+	
+	public int hash(K key)
+	{
+		/* Start with a base, just so that it's not 0 for empty strings */
+	    int result = 42;
+	    String inputString = key.toString().toLowerCase();
+
+	    char [] characters = inputString.toCharArray();
+	    for (int i = 0; i < characters.length; i++) 
+	    {
+	      char currentChar = characters[i];
+	      int j = (int)currentChar;
+	      result += j;
+	    }
+       System.out.println(result%max+"--------------------");
+	    return (result % max);
+	  }
+	
+
+}

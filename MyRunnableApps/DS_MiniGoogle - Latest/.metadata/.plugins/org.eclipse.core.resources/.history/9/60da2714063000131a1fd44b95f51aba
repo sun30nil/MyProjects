@@ -1,0 +1,154 @@
+package spider;
+
+import java.io.IOException;
+import java.net.*;
+import java.util.Vector;
+
+import dictionary.ObjectIterator;
+import parser.PageLexer;
+import url.URLTextReader;
+import element.PageElementInterface;
+import element.PageHref;
+import element.PageWord;
+import indexer.Indexer;
+
+/** Web-crawling objects.  Instances of this class will crawl a given
+ *  web site in Priority-first order.
+ */
+public class PriorityBasedSpider implements SpiderInterface 
+{
+
+  /** Create a new web spider.
+  @param u The URL of the web site to crawl.
+  @param i The initial web index object to extend.
+   */
+
+	private Indexer i = null;
+	private URL u; 
+	Vector v=new Vector();
+	public PriorityBasedSpider (URL u, Indexer i) 
+	{
+		this.u = u;
+		this.i = i;
+
+	}
+
+	/** Crawl the web, up to a certain number of web pages.
+	@param limit The maximum number of pages to crawl.
+	 */
+	@SuppressWarnings("unchecked")
+	public Indexer crawl (int limit) 
+	{
+	
+		////////////////////////////////////////////////////////////////////
+	    //  Write your Code here as part of Priority Based Spider assignment
+	    //  
+	    ///////////////////////////////////////////////////////////////////
+		PQueue q=new PQueue();
+    	
+		try
+    	{
+			 final String authUser = "iiit-63";
+				final String authPassword = "MSIT123";
+
+				System.setProperty("http.proxyHost", "proxy.iiit.ac.in");
+				System.setProperty("http.proxyPort", "8080");
+				System.setProperty("http.proxyUser", authUser);
+				System.setProperty("http.proxyPassword", authPassword);
+
+				Authenticator.setDefault(
+				  new Authenticator() 
+				  {
+				    public PasswordAuthentication getPasswordAuthentication()
+				    {
+				      return new PasswordAuthentication(authUser, authPassword.toCharArray());
+				    }
+				  }
+				);
+
+				System.setProperty("http.proxyUser", authUser);
+				System.setProperty("http.proxyPassword", authPassword);
+    		URLTextReader in = new URLTextReader(u);
+    		// Parse the page into its elements
+    		PageLexer elts = new PageLexer(in, u);		
+    		int count1=0;
+    		// Print out the tokens
+    		int count = 0;
+    		
+    		while (elts.hasNext()) 
+    		{
+    			count++;
+    			PageElementInterface elt = (PageElementInterface)elts.next();			 
+    			if (elt instanceof PageHref)
+    			if(count1<limit)
+    			{
+    				if(q.isempty())
+    				{
+    					q.enqueue(elt.toString(),count);
+					}
+    				else
+    				{
+    					if(q.search(elt.toString(),count))
+    					{
+    						q.enqueue(elt.toString(),count);
+    					}
+    				}
+    				count1++;
+    				System.out.println("link: "+elt);
+    				
+    			}
+    		}
+    		System.out.println("links retrieved: "+count1);
+    		q.display();
+    		while(limit !=0)
+    		{
+    			Object elt=q.dequeue();
+    			URL u1=new URL(elt.toString());
+    			URLTextReader in1= new URLTextReader(u1);
+    			// Parse the page into its elements
+    			PageLexer elt1 = new PageLexer(in1, u1);
+    			while (elt1.hasNext()) 
+    			{
+    				PageElementInterface elts2= (PageElementInterface)elt1.next();
+    				if (elts2 instanceof PageWord)
+    				{
+    					v.add(elts2);
+    				}
+    				System.out.println("words:"+elts2);
+    			}    			
+				ObjectIterator OI=new ObjectIterator(v);
+				i.addPage(u1,OI);
+				for(int j=0;j<v.size();j++);
+				{
+					System.out.println("hello"+v.get(count));
+				}
+				limit--;
+    		}
+    		
+    	}
+    	catch (Exception e)
+    	{
+    		System.out.println("Bad file or URL specification");
+    	}
+     return i;
+	}
+
+	/** Crawl the web, up to the default number of web pages.
+	 */
+	public Indexer  crawl() 
+	{
+		// This redirection may effect performance, but its OK !!
+		System.out.println("Crawling: "+u.toString());
+		return  crawl(crawlLimitDefault);
+	}
+
+	/** The maximum number of pages to crawl. */
+	public int crawlLimitDefault = 10;
+
+	public Vector Display() 
+	{
+		// TODO Auto-generated method stub
+		return v;
+	}
+
+}

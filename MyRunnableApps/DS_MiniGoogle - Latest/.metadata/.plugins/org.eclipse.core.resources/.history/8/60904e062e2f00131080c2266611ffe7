@@ -1,0 +1,166 @@
+package spider;
+
+import java.io.IOException;
+import java.io.Reader;
+import java.io.StreamTokenizer;
+import java.net.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Vector;
+
+import dictionary.ObjectIterator;
+import parser.HttpTokenizer;
+import parser.PageLexer;
+import url.URLTextReader;
+import element.PageElementInterface;
+import element.PageHref;
+import element.PageImg;
+import element.PageNum;
+import element.PageWord;
+import indexer.Indexer;
+
+/** Web-crawling objects.  Instances of this class will crawl a given
+ *  web site in breadth-first order.
+ * @param <E>
+ */
+public class BreadthFirstSpider<E> implements Iterator<E> ,  SpiderInterface 
+{
+	
+  /** Create a new web spider.
+  @param u The URL of the web site to crawl.
+  @param i The initial web index object to extend.
+   */
+
+  private Indexer i = null;
+  private URL u; 
+
+  public BreadthFirstSpider (URL u, Indexer i)
+  {
+    this.u = u;
+    this.i = i;
+   
+  }
+  Vector<E> el;
+  String str=null;
+  /** Crawl the web, up to a certain number of web pages.
+  @param limit The maximum number of pages to crawl.
+ * @throws IOException 
+   */
+  public Indexer crawl (int limit) throws IOException 
+  {
+	  
+    ////////////////////////////////////////////////////////////////////
+      //  Write your Code here as part of Breadth First Spider assignment
+      //  
+      ///////////////////////////////////////////////////////////////////
+    
+    return i;
+  }
+  int i1 =0;
+   Vector<E> kwords=new Vector();
+   Queue qe = new LinkedList();
+   Queue qeURL = new LinkedList();
+  /** Crawl the web, up to the default number of web pages.
+ * @throws IOException 
+   */
+  public Indexer  crawl() throws IOException
+  {
+	  final String authUser = "iiit-63";
+		final String authPassword = "MSIT123";
+
+		System.setProperty("http.proxyHost", "proxy.iiit.ac.in");
+		System.setProperty("http.proxyPort", "8080");
+		System.setProperty("http.proxyUser", authUser);
+		System.setProperty("http.proxyPassword", authPassword);
+
+		Authenticator.setDefault(
+		  new Authenticator() {
+		    public PasswordAuthentication getPasswordAuthentication()
+		    {
+		      return new PasswordAuthentication(authUser, authPassword.toCharArray());
+		    }
+		  }
+		);
+
+		System.setProperty("http.proxyUser", authUser);
+		System.setProperty("http.proxyPassword", authPassword);
+		   PageLexer<PageElementInterface> elts=null;
+		   PageLexer<PageElementInterface> elts1=null;
+		   while(true){
+		try{
+			
+			
+	  URLTextReader in = new URLTextReader(u);
+	
+      // Parse the page into its elements
+     elts = new PageLexer<PageElementInterface>(in, u);
+ 
+      // Print out the tokens
+		}
+		catch(Exception e)
+		{
+			
+		}
+      System.out.println(u);
+      int count = 0;
+      while (elts.hasNext()) 
+      {
+        PageElementInterface elt = (PageElementInterface)elts.next();
+        if (elt instanceof PageHref)
+        { 
+        	qeURL.add(elt);
+        	System.out.println("link: "+elt);
+        }
+        if (elt instanceof PageWord)
+        { 
+        	//System.out.println(elt);
+        	qe.add( elt);
+        }	   
+      }
+      
+      int siz=qe.size();
+      for(int i=0;i<siz;i++)
+      {
+    	  kwords.add ((E)qe.remove());
+      }
+		
+      u = (URL)  ((Vector<E>) qeURL).get(i1);
+      i1++;
+      ObjectIterator oit=new ObjectIterator(kwords);
+     i.addPage(u, oit);
+		}
+    /* System.out.println(qeURL.size()+"---------------------------");
+     for (int j=0;j<qeURL.size();j++)
+     {
+    	 this.u=(URL) qeURL.remove(); 
+    	 crawl();
+     }  */
+	return i;
+  }
+
+  /** The maximum number of pages to crawl. */
+  public int crawlLimitDefault = 10;
+
+@Override
+public boolean hasNext() 
+{
+	// TODO Auto-generated method stub
+	return false;
+}
+
+@Override
+public E next() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public void remove() {
+	// TODO Auto-generated method stub
+	
+}
+
+}
+

@@ -1,0 +1,33 @@
+package gui;
+import java.io.*;
+import java.net.Socket;
+import java.util.StringTokenizer;
+
+import search.SearchDriver;
+
+public class client_server
+{
+	public static String main(String v) throws Exception 
+	{
+		String queryy;
+		String output;
+		SearchDriver sd=new SearchDriver();
+		String modifiedqueryy;
+		BufferedReader user_input = new BufferedReader(new InputStreamReader(
+				System.in));
+		
+		
+		queryy = v;
+		
+		StringTokenizer st = new StringTokenizer(queryy," ");
+		String str1 = st.nextToken();
+		String str2 = st.nextToken();
+		String str3 = st.nextToken();
+		String str4 = st.nextToken();
+		output=sd.Search(str2, str3, str4, str1);			
+		
+		return output;
+
+	}
+}
+

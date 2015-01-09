@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;Dictonary&apos; to &apos;SearchEngine/src/dictionary&apos;&#x0D;&#x0A;- Original project: &apos;SearchEngine&apos;&#x0D;&#x0A;- Destination element: &apos;SearchEngine/src/dictionary&apos;&#x0D;&#x0A;- Original element: &apos;SearchEngine/src/Dictonary&apos;" description="Copy package" destination="/src&lt;dictionary" element1="/src&lt;Dictonary" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1380686633409" version="1.0"/>
+</session>
